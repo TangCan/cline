@@ -37,6 +37,12 @@ export const BUFFER_STUCK_TIMEOUT_MS = 6000 // 6 seconds
 /** Timeout to detect stuck completion */
 export const COMPLETION_TIMEOUT_MS = 6000 // 6 seconds
 
+/**
+ * Max time to wait for shell integration stream to finish.
+ * If the stream never closes or we never see the completion marker, we stop and use fallback.
+ */
+export const SHELL_INTEGRATION_STREAM_TIMEOUT_MS = 60_000 // 60 seconds
+
 // =============================================================================
 // Large Output Protection
 // =============================================================================
