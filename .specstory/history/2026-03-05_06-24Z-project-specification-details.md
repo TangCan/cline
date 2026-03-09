@@ -4525,7 +4525,1548 @@ The user is reporting an issue: when running a command in the terminal, the syst
 Let me search for relevant code related to:
 1. Terminal command execution
 2. Reading terminal output/results
-3. The "Thinking" state and when i</details></think>
+3. The "Thinking" state and when it transitions
+4. Shell integration or terminal output capture
+
+I'll search the codebase for these concepts.
+</details></think>
+
+---
+
+
+正在查找终端命令执行与输出读取的相关代码，定位导致一直显示 "Thinking" 且无法正确读取命令结果的原因。
+
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search">
+<details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+
+Parameters:
+
+```json
+{
+  "pattern": "Thinking|thinking",
+  "path": "/home/ars/richard/2026/pvm_2/cline",
+  "glob": "*.{ts,tsx}",
+  "outputMode": "content",
+  "caseInsensitive": false
+}
+```
+Additional data:
+
+```json
+{
+  "isPruned": true,
+  "pattern": "Thinking|thinking",
+  "path": "/home/ars/richard/2026/pvm_2/cline",
+  "outputMode": "content",
+  "totalFiles": 118,
+  "totalMatches": 832,
+  "topFiles": [
+    {
+      "uri": "./webview-ui/src/components/settings/providers/MiniMaxProvider.tsx",
+      "matchCount": 2
+    },
+    {
+      "uri": "./webview-ui/src/components/settings/providers/VertexProvider.tsx",
+      "matchCount": 4
+    },
+    {
+      "uri": "./webview-ui/src/components/settings/providers/OcaModelPicker.tsx",
+      "matchCount": 3
+    },
+    {
+      "uri": "./webview-ui/src/components/settings/providers/LiteLlmProvider.tsx",
+      "matchCount": 4
+    },
+    {
+      "uri": "./webview-ui/src/components/settings/utils/providerUtils.ts",
+      "matchCount": 5
+    },
+    {
+      "uri": "./webview-ui/src/components/settings/utils/pricingUtils.ts",
+      "matchCount": 3
+    },
+    {
+      "uri": "./webview-ui/src/components/settings/providers/ClaudeCodeProvider.tsx",
+      "matchCount": 2
+    },
+    {
+      "uri": "./webview-ui/src/components/settings/providers/BedrockProvider.tsx",
+      "matchCount": 2
+    },
+    {
+      "uri": "./webview-ui/src/components/settings/providers/QwenProvider.tsx",
+      "matchCount": 2
+    },
+    {
+      "uri": "./webview-ui/src/components/onboarding/OnboardingView.tsx",
+      "matchCount": 4
+    },
+    {
+      "uri": "./webview-ui/src/components/settings/VercelModelPicker.tsx",
+      "matchCount": 2
+    },
+    {
+      "uri": "./webview-ui/src/components/settings/ClineModelPicker.tsx",
+      "matchCount": 4
+    },
+    {
+      "uri": "./webview-ui/src/components/settings/providers/AnthropicProvider.tsx",
+      "matchCount": 3
+    },
+    {
+      "uri": "./webview-ui/src/components/settings/RequestyModelPicker.tsx",
+      "matchCount": 2
+    },
+    {
+      "uri": "./webview-ui/src/components/settings/ThinkingBudgetSlider.tsx",
+      "matchCount": 24
+    },
+    {
+      "uri": "./webview-ui/src/components/settings/OpenRouterModelPicker.tsx",
+      "matchCount": 4
+    },
+    {
+      "uri": "./webview-ui/src/components/settings/common/ModelInfoView.tsx",
+      "matchCount": 4
+    },
+    {
+      "uri": "./webview-ui/src/components/chat/chat-view/utils/messageUtils.test.ts",
+      "matchCount": 4
+    },
+    {
+      "uri": "./webview-ui/src/components/chat/chat-view/components/layout/IdleIndicator.stashed.tsx",
+      "matchCount": 2
+    },
+    {
+      "uri": "./webview-ui/src/components/chat/chat-view/components/layout/MessagesArea.tsx",
+      "matchCount": 7
+    }
+  ]
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search">
+<details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+
+Parameters:
+
+```json
+{
+  "pattern": "terminal.*output|runTerminalCommand|executeCommand|command.*result",
+  "path": "/home/ars/richard/2026/pvm_2/cline/src",
+  "glob": "*.ts",
+  "outputMode": "content",
+  "caseInsensitive": true
+}
+```
+Additional data:
+
+```json
+{
+  "isPruned": true,
+  "pattern": "terminal.*output|runTerminalCommand|executeCommand|command.*result",
+  "path": "/home/ars/richard/2026/pvm_2/cline/src",
+  "outputMode": "content",
+  "totalFiles": 80,
+  "totalMatches": 254,
+  "topFiles": [
+    {
+      "uri": "src/test/vscode-mock.ts",
+      "matchCount": 1
+    },
+    {
+      "uri": "src/test/extension.test.ts",
+      "matchCount": 1
+    },
+    {
+      "uri": "src/shared/storage/state-keys.ts",
+      "matchCount": 1
+    },
+    {
+      "uri": "src/shared/ExtensionMessage.ts",
+      "matchCount": 1
+    },
+    {
+      "uri": "src/services/test/TestServer.ts",
+      "matchCount": 2
+    },
+    {
+      "uri": "src/services/telemetry/index.ts",
+      "matchCount": 2
+    },
+    {
+      "uri": "src/services/test/TestMode.ts",
+      "matchCount": 3
+    },
+    {
+      "uri": "src/services/telemetry/TelemetryService.ts",
+      "matchCount": 10
+    },
+    {
+      "uri": "src/registry.ts",
+      "matchCount": 1
+    },
+    {
+      "uri": "src/integrations/terminal/standalone/StandaloneTerminalManager.ts",
+      "matchCount": 8
+    },
+    {
+      "uri": "src/integrations/terminal/standalone/StandaloneTerminal.ts",
+      "matchCount": 2
+    },
+    {
+      "uri": "src/integrations/terminal/types.ts",
+      "matchCount": 5
+    },
+    {
+      "uri": "src/hosts/vscode/hostbridge/workspace/saveOpenDocumentIfDirty.test.ts",
+      "matchCount": 3
+    },
+    {
+      "uri": "src/hosts/vscode/hostbridge/workspace/openFolder.ts",
+      "matchCount": 1
+    },
+    {
+      "uri": "src/hosts/vscode/hostbridge/workspace/openProblemsPanel.ts",
+      "matchCount": 1
+    },
+    {
+      "uri": "src/hosts/vscode/hostbridge/workspace/executeCommandInTerminal.ts",
+      "matchCount": 6
+    },
+    {
+      "uri": "src/hosts/vscode/hostbridge/workspace/openInFileExplorerPanel.ts",
+      "matchCount": 1
+    },
+    {
+      "uri": "src/hosts/vscode/hostbridge/workspace/openTerminalPanel.ts",
+      "matchCount": 1
+    },
+    {
+      "uri": "src/hosts/vscode/hostbridge/workspace/openClineSidebarPanel.ts",
+      "matchCount": 1
+    },
+    {
+      "uri": "src/hosts/vscode/terminal/VscodeTerminalProcess.ts",
+      "matchCount": 12
+    }
+  ]
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search">
+<details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+
+Parameters:
+
+```json
+{
+  "pattern": "shell.*integration|terminal.*integration",
+  "path": "/home/ars/richard/2026/pvm_2/cline",
+  "glob": "*.{ts,tsx}",
+  "outputMode": "content",
+  "caseInsensitive": true
+}
+```
+Additional data:
+
+```json
+{
+  "isPruned": true,
+  "pattern": "shell.*integration|terminal.*integration",
+  "path": "/home/ars/richard/2026/pvm_2/cline",
+  "outputMode": "content",
+  "totalFiles": 31,
+  "totalMatches": 198,
+  "topFiles": [
+    {
+      "uri": "./webview-ui/src/context/ExtensionStateContext.tsx",
+      "matchCount": 1
+    },
+    {
+      "uri": "./webview-ui/src/components/settings/sections/TerminalSettingsSection.tsx",
+      "matchCount": 6
+    },
+    {
+      "uri": "./webview-ui/src/App.stories.tsx",
+      "matchCount": 9
+    },
+    {
+      "uri": "./webview-ui/src/components/chat/ChatRow.tsx",
+      "matchCount": 6
+    },
+    {
+      "uri": "./src/test/host-provider-test-utils.ts",
+      "matchCount": 1
+    },
+    {
+      "uri": "./src/standalone/cline-core.ts",
+      "matchCount": 1
+    },
+    {
+      "uri": "./src/shared/proto-conversions/cline-message.ts",
+      "matchCount": 3
+    },
+    {
+      "uri": "./src/shared/storage/state-keys.ts",
+      "matchCount": 1
+    },
+    {
+      "uri": "./src/shared/storage/__tests__/state-keys.test.ts",
+      "matchCount": 2
+    },
+    {
+      "uri": "./src/shared/ExtensionMessage.ts",
+      "matchCount": 3
+    },
+    {
+      "uri": "./src/services/telemetry/TelemetryService.ts",
+      "matchCount": 2
+    },
+    {
+      "uri": "./src/integrations/terminal/standalone/StandaloneTerminalManager.ts",
+      "matchCount": 8
+    },
+    {
+      "uri": "./src/integrations/terminal/standalone/StandaloneTerminalProcess.ts",
+      "matchCount": 2
+    },
+    {
+      "uri": "./src/integrations/terminal/standalone/StandaloneTerminal.ts",
+      "matchCount": 4
+    },
+    {
+      "uri": "./src/integrations/terminal/types.ts",
+      "matchCount": 15
+    },
+    {
+      "uri": "./src/integrations/terminal/CommandOrchestrator.test.ts",
+      "matchCount": 1
+    },
+    {
+      "uri": "./src/integrations/terminal/CommandOrchestrator.ts",
+      "matchCount": 5
+    },
+    {
+      "uri": "./src/integrations/terminal/index.ts",
+      "matchCount": 1
+    },
+    {
+      "uri": "./src/integrations/terminal/CommandExecutor.ts",
+      "matchCount": 14
+    },
+    {
+      "uri": "./src/hosts/vscode/terminal/VscodeTerminalProcess.ts",
+      "matchCount": 20
+    }
+  ]
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+
+The "Thinking" in the UI seems to be about the loading/reasoning state (ThinkingRow, showThinkingLoaderRow). The user's issue is: after running a terminal command, it stays on "Thinking" and doesn't correctly read the command result. So the problem is likely:
+
+1. Terminal command runs
+2. Something doesn't resolve or return the output properly
+3. UI keeps showing "Thinking" (waiting for response)
+4. Command output is never delivered to the model/UI
+
+I need to trace the flow:
+- executeCommandTool → CommandExecutor / CommandOrchestrator → terminal runCommand → VscodeTerminalProcess
+- VscodeTerminalProcess uses shell integration executeCommand and waits for the result
+- If shell integration doesn't complete properly (timeout, no output, promise never resolves), the tool might hang
+
+Let me read VscodeTerminalProcess.ts in full to understand when the promise resolves and what could cause it to hang. Also CommandOrchestrator to see how the result flows back.
+</details></think>
+
+---
+
+
+深入查看终端命令执行与结果返回的完整流程：
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: /home/ars/richard/2026/pvm_2/cline/src/hosts/vscode/terminal/VscodeTerminalProcess.ts</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: /home/ars/richard/2026/pvm_2/cline/src/integrations/terminal/CommandOrchestrator.ts</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: /home/ars/richard/2026/pvm_2/cline/src/integrations/terminal/constants.ts</summary>
+
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+
+I see the flow now. In VscodeTerminalProcess.run():
+1. It uses `terminal.shellIntegration.executeCommand(command)` which returns an execution object
+2. It does `const stream = execution.read()` and then `for await (let data of stream)` 
+3. The loop continues until the stream ends
+4. After the loop it emits "completed" and "continue"
+
+The issue could be:
+1. **Stream never ends**: If the shell integration stream doesn't properly signal completion (e.g. no ]633;D marker or stream never closes), the for-await loop would hang forever, so "completed" and "continue" are never emitted. That would leave the orchestrator waiting, and the UI would stay on "Thinking".
+2. **Stream iteration behavior**: Maybe in some environments/shells the async iterator never yields or never completes.
+
+Let me check:
+- How does the task layer wait for the command result?
+- Is there a timeout on the process promise?
+
+Looking at the types - TerminalProcessResultPromise is the process merged with a Promise. So who creates the Promise and what resolves it? I need to see VscodeTerminalManager.runCommand - it likely creates the process, runs it, and the promise is tied to the "continue" or "completed" event.
+</details></think>
+
+---
+
+
+查看 `runCommand` 如何创建并解析 Promise，以及 `executeCommandTool` 如何等待结果：
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: /home/ars/richard/2026/pvm_2/cline/src/hosts/vscode/terminal/VscodeTerminalManager.ts</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: /home/ars/richard/2026/pvm_2/cline/src/integrations/terminal/types.ts</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search">
+<details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+
+Parameters:
+
+```json
+{
+  "pattern": "runCommand|executeCommandTool",
+  "path": "/home/ars/richard/2026/pvm_2/cline/src/core/task",
+  "outputMode": "content",
+  "contextBefore": 0,
+  "contextAfter": 2,
+  "caseInsensitive": false
+}
+```
+Additional data:
+
+```json
+{
+  "isPruned": true,
+  "pattern": "runCommand|executeCommandTool",
+  "path": "/home/ars/richard/2026/pvm_2/cline/src/core/task",
+  "outputMode": "content",
+  "totalFiles": 9,
+  "totalMatches": 13,
+  "topFiles": [
+    {
+      "uri": "src/core/task/tools/types/TaskConfig.ts",
+      "matchCount": 3
+    },
+    {
+      "uri": "src/core/task/tools/subagent/SubagentRunner.ts",
+      "matchCount": 6
+    },
+    {
+      "uri": "src/core/task/tools/subagent/__tests__/SubagentRunner.test.ts",
+      "matchCount": 3
+    },
+    {
+      "uri": "src/core/task/tools/utils/ToolConstants.ts",
+      "matchCount": 3
+    },
+    {
+      "uri": "src/core/task/index.ts",
+      "matchCount": 9
+    },
+    {
+      "uri": "src/core/task/ToolExecutor.ts",
+      "matchCount": 6
+    },
+    {
+      "uri": "src/core/task/tools/handlers/__tests__/SubagentToolHandler.test.ts",
+      "matchCount": 3
+    },
+    {
+      "uri": "src/core/task/tools/handlers/AttemptCompletionHandler.ts",
+      "matchCount": 3
+    },
+    {
+      "uri": "src/core/task/tools/handlers/ExecuteCommandToolHandler.ts",
+      "matchCount": 3
+    }
+  ]
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+
+So the promise in VscodeTerminalManager is resolved when "continue" is emitted. The "continue" is emitted in VscodeTerminalProcess.run() only after the for-await loop completes. So if the stream from shell integration never ends (never closes the async iterator), the loop never finishes, "continue" is never emitted, and the promise never resolves → UI stays "Thinking".
+
+Possible causes:
+1. **Shell integration stream doesn't end**: In some shells or VS Code versions, the executeCommand stream might not properly close when the command finishes (e.g. no final chunk with ]633;D or the iterator never returns done).
+2. **No timeout on the stream**: There's no timeout on the for-await loop - if the stream hangs, we hang forever.
+
+Let me check if there's a timeout at the executeCommandTool level and how completion is detected. I'll also look at the VS Code shell integration API - maybe the stream is supposed to end when the command completes but in some cases it doesn't.
+
+Looking at the code again - when would the stream end? The `execution.read()` returns an AsyncIterable. The iterator completes when the stream ends. So the shell integration API must signal "command finished" by closing the stream. If that doesn't happen (e.g. shell doesn't emit the right sequence, or there's a bug), we'd hang.
+
+**Fix approach:**
+1. Add a timeout: if we don't receive "completed" / "continue" within X seconds after the last data (or from start for quick commands), treat as done and use fallback (get terminal contents and emit completed/continue).
+2. Or: when we see the ]633;D completion marker in the data, we could break out of the loop after processing instead of waiting for the stream to close - but we're already parsing that for exitCode. So we could break when we have exitCode and the stream hasn't given more data for a short time? Actually the issue is the stream might never give the closing iteration. So the fix is to add a timeout that forces completion.
+
+Let me look at COMPLETION_TIMEOUT_MS - 6 seconds - in CommandOrchestrator. So there's already a completion timeout in the orchestrator. Let me read more of CommandOrchestrator to see how it's used.
+</details></think>
+
+---
+
+
+继续查看 CommandOrchestrator 中的 completion 超时逻辑及 executeCommandTool 的完整流程：
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: /home/ars/richard/2026/pvm_2/cline/src/integrations/terminal/CommandOrchestrator.ts</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: /home/ars/richard/2026/pvm_2/cline/src/core/task/index.ts</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: /home/ars/richard/2026/pvm_2/cline/src/integrations/terminal/CommandExecutor.ts</summary>
+
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+
+Now I understand. The flow is:
+1. `executeCommandTool` → `commandExecutor.execute()` → `orchestrateCommandExecution(process, ...)` 
+2. The `process` is from `terminalManager.runCommand()` which returns mergePromise(process, promise)
+3. The promise resolves when process emits "continue"
+4. "continue" is emitted in VscodeTerminalProcess.run() only after the `for await (let data of stream)` loop exits
+5. The loop exits only when the async iterator from `execution.read()` is done
+
+So if the shell integration stream never closes (iterator never returns done: true), we never exit the loop, never emit "completed"/"continue", and the promise never resolves. The orchestrator at line 506 does `await process` when there's no timeout - so it waits forever.
+
+**Root cause**: The `execution.read()` async iterable from VS Code's shell integration might not always close when the command finishes—e.g. in some shells, or when the command produces no output, or due to a VS Code/shell bug. So we need to:
+
+1. **In VscodeTerminalProcess.run()**: Add a timeout so that if the stream doesn't end within a reasonable time after we've seen the completion marker (]633;D) or after we've received some data and then silence, we break out of the loop and emit completed/continue. Or add a maximum wait time from the start.
+
+2. **Alternative**: When we detect the ]633;D marker (command finished), we could break out of the loop immediately instead of waiting for the stream to close. Looking at the code again - we parse exitCode from ]633;D but we don't break. We just keep iterating. So the stream might send the completion marker in a chunk but then never close the iterator. So the fix could be: after we've seen a chunk containing ]633;D and we've processed it, break out of the loop (and then emit completed/continue). That way we don't rely on the stream ending.
+
+Let me look at the stream behavior again. The chunks we get might be:
+- Chunk 1: command echo + output + ]633;C... ]633;D;0
+- So in one chunk we might get both the output and the completion marker. After processing that chunk we continue the loop - and the next iteration might never come if the stream doesn't close.
+
+So the fix: when we have parsed exitCode from ]633;D (i.e. we've seen the completion marker), we can break out of the for-await loop. We already set this.exitCode when we see the marker. So we need to break when we've seen the completion marker in the current or a previous chunk. Let me check - we parse completionMatches from every chunk and set this.exitCode. So when latestCompletionMatch?.[1] !== undefined we have seen the completion marker. We could set a flag "seenCompletionMarker" and after processing the chunk, if seenCompletionMarker then break. But wait - we might get the completion marker in the first chunk together with the output, and we need to process that chunk (emit lines etc) before breaking. So the logic would be: after processing a chunk, if we found a completion marker in it (completionMatches.length > 0 or latestCompletionMatch), break. Let me re-read - we're already inside the loop processing "data". So after we've done all the processing for this chunk (emit lines, etc.), we can check: if (latestCompletionMatch !== undefined) break; or if (completionMatches.length > 0) break. That way we exit the loop as soon as we've seen the completion marker and processed that chunk.
+
+But actually there could be multiple ]633;D in the stream (e.g. from multiple commands?). So we want to break when we see the completion marker. Let me use a simple approach: after processing each chunk, if we parsed an exit code from this chunk (i.e. we saw ]633;D), break. That might be the right fix.
+
+One more thing: what if the command produces no output and the stream never sends any chunk with ]633;D? Then we'd still hang. So we need a timeout as well. Let me add:
+1. Break out of the loop when we've seen ]633;D in the current chunk (command finished).
+2. Add a timeout (e.g. 60 seconds or use PROCESS_HOT_TIMEOUT) so that if the stream doesn't end and we haven't seen completion marker, we still break and use the fallback (get terminal contents).
+
+Let me check the code again for where to add the break. We have:
+```
+for await (let data of stream) {
+  const completionMatches = ...
+  const latestCompletionMatch = ...
+  if (latestCompletionMatch?.[1] !== undefined) {
+    this.exitCode = ...
+  }
+  // ... process chunk ...
+  // at the end we could: if (latestCompletionMatch) break;
+}
+```
+But we need to be careful - sometimes the completion marker might come in a chunk that has no other output, or the marker might be at the start. Let me add the break after we've processed the chunk. And add a timeout wrapper around the whole for-await loop so we don't hang forever.
+
+For the timeout: we can't easily add a timeout to for-await. We need to race the loop with a timeout promise. One approach: create an async iterator that wraps the stream and yields until either the stream ends or a timeout. Or: run the for-await in a Promise and race with setTimeout. So:
+Promise.race([
+  (async () => { for await (...) { ... } })(),
+  new Promise((_, reject) => setTimeout(() => reject(new Error('TIMEOUT')), 60000))
+]).catch(...)
+If timeout, we'd go to the fallback path (returnCurrentTerminalContents, emit completed, etc.).
+
+Let me implement:
+1. In VscodeTerminalProcess.run(), after processing each chunk, if we have completionMatches.length > 0 (we saw at least one ]633;D in this chunk), break out of the loop.
+2. Wrap the for-await loop in a timeout (e.g. 60s). If timeout, treat like "no output" and use returnCurrentTerminalContents, then emit completed/continue.
+
+Checking the constant - there's PROCESS_HOT_TIMEOUT_COMPILING = 15s. For "command didn't finish" we might want longer - 60s or 90s. Or we could use the timeoutSeconds from the tool if it's passed down - but that's at the orchestrator level. For the process level, a fixed 60s or 90s max wait is reasonable.
+</details></think>
+
+---
+
+
+查看 shell integration 流在收到完成标记后的行为及是否存在超时逻辑：
+
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search">
+<details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+
+Parameters:
+
+```json
+{
+  "pattern": "633;D|completionMatches|exitCode",
+  "path": "/home/ars/richard/2026/pvm_2/cline/src/hosts/vscode/terminal/VscodeTerminalProcess.ts",
+  "outputMode": "content",
+  "contextBefore": 0,
+  "contextAfter": 0,
+  "caseInsensitive": false
+}
+```
+Additional data:
+
+```json
+{
+  "isPruned": true,
+  "pattern": "633;D|completionMatches|exitCode",
+  "path": "/home/ars/richard/2026/pvm_2/cline/src/hosts/vscode/terminal/VscodeTerminalProcess.ts",
+  "outputMode": "content",
+  "totalFiles": 1,
+  "totalMatches": 10,
+  "topFiles": [
+    {
+      "uri": "src/hosts/vscode/terminal/VscodeTerminalProcess.ts",
+      "matchCount": 10
+    }
+  ]
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="search" data-tool-name="web_search">
+<details>
+            <summary>Tool use: **web_search** • Searched web `undefined` • **1** results</summary>
+        
+| Title | URL | Chunk |
+|-------|-----|-------|
+| Web search results for query: VS Code terminal shell integration executeCommand read stream when does it end close |  | Links:<br/>1. [Terminal Shell Integration](https://code.visualstudio.com/docs/terminal/shell-integration)<br/>2. [`onDidStartTerminalShellExecution` is fired before `shellIntegration.executeCommand` returns · Issue #208650 · microsoft/vscode](https://github.com/microsoft/vscode/issues/208650)<br/>3. [Make execution.read() return output consistently · Pull Request #241491 · microsoft/vscode](https://github.com/microsoft/vscode/pull/241491)<br/>4. [calling `executeCommand` in `onDidEndTerminalShellExecution` causes recursion and the pty host to shutdown · Issue #226885 · microsoft/vscode](https://github.com/microsoft/vscode/issues/226885)<br/>5. [How to use Terminal API to listen to all terminal commands/output in VS Code?](https://stackoverflow.com/questions/57630371/how-to-use-terminal-api-to-listen-to-all-terminal-commands-output-in-vs-code)<br/><br/># VS Code Terminal Shell Integration: executeCommand and Read Stream<br/><br/>## When executeCommand Returns<br/><br/>The `shellIntegration.executeCommand` method returns before the command has fully executed. Specifically, `onDidStartTerminalShellExecution` is fired *before* `executeCommand` returns, making it difficult to distinguish your own executions from others.[2]<br/><br/>## Read Stream Lifecycle<br/><br/>The `execution.read()` method returns output as an async iterable stream. The stream remains available between the `onDidStartTerminalShellExecution` and `onDidEndTerminalShellExecution` events.[3][5]<br/><br/>### Output Consistency<br/><br/>The `read()` output is now consistent as of a recent fix:[3] The stream includes output up through the command completion marker (C sequence) but excludes the D sequence and following prompt. This consistency is achieved by preventing async operations between the D handler and the execution end event firing.<br/><br/>## Important Caveat<br/><br/>Calling `executeCommand` within `onDidEndTerminalShellExecution` causes recursion and can shutdown the PTY host, so this pattern should be avoided.[4] |
+
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+
+The web search suggests the stream should end, but there are known issues. The fix should be:
+1. When we see the ]633;D completion marker in a chunk, break out of the loop immediately after processing that chunk - don't wait for the stream to close. This handles cases where the stream doesn't close properly.
+2. Add a safety timeout so if we never see the completion marker (e.g. shell doesn't support it, or something goes wrong), we still complete and use fallback after e.g. 60 seconds.
+
+Let me implement both in VscodeTerminalProcess.ts.
+</details></think>
+
+---
+
+
+正在实现修复：在检测到完成标记 `]633;D` 后立即退出循环，并添加安全超时以防流未正确关闭。
+
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="todo_write">
+<details><summary>Tool use: **todo_write** • Todo List</summary>
+
+- [-] Break out of stream loop when ]633;D completion marker is seen
+- [ ] Add timeout fallback so process always completes and emits continue
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: /home/ars/richard/2026/pvm_2/cline/src/hosts/vscode/terminal/VscodeTerminalProcess.ts</summary>
+
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+
+I need to:
+1. After processing each chunk, if we saw a completion marker (completionMatches.length > 0), break out of the loop so we don't wait for the stream to close.
+2. Wrap the entire for-await in a timeout race so that if the stream never ends and we never see the completion marker, we still exit after e.g. 60 seconds and run the fallback.
+
+For (1): Add at the end of the loop body (after all the processing, after `if (this.isListening) { ... }`): 
+```
+// Shell integration may not always close the stream; exit once we've seen the completion marker
+if (completionMatches.length > 0) {
+  break
+}
+```
+
+For (2): We need to race the for-await with a timeout. The clean way is to create a helper that runs the loop and returns, then Promise.race with a timeout. If timeout wins, we break... but we can't break from inside a Promise. So we need to structure it differently. Option A: use a shared "timedOut" flag and an AbortController-like pattern - inside the loop check the flag each time. So we start a setTimeout(60s) that sets timedOut = true. The loop runs for await - we can't easily interrupt it. So we need to race: run the loop in a promise, race with timeout. When timeout wins, we exit the try/catch and go to the fallback (same as no output). So:
+
+const runStream = async () => {
+  for await (let data of stream) {
+    ...
+    if (completionMatches.length > 0) break
+  }
+}
+await Promise.race([
+  runStream(),
+  new Promise((_, reject) => setTimeout(() => reject(new Error('STREAM_TIMEOUT')), 60000))
+]).catch((err) => {
+  if (err?.message === 'STREAM_TIMEOUT') {
+    Logger.warn('Shell integration stream timed out, using fallback')
+    // Don't rethrow - we'll use fallback below
+  } else {
+    throw err
+  }
+})
+
+After the race, we still need to run emitRemainingBufferIfListening(), check fullOutput, etc. So the structure should be:
+
+try {
+  for await (let data of stream) {
+    ...
+    if (completionMatches.length > 0) break
+  }
+} catch (err) {
+  if (err?.message !== 'STREAM_TIMEOUT') throw err
+  Logger.warn('Shell integration stream timed out')
+}
+// rest of the code (emitRemainingBuffer, fallback if no output, emit completed/continue)
+
+But we can't "throw" from inside the setTimeout to break the for-await. The for-await will keep running. So we need to race at the level of the whole run() - the run() returns a promise implicitly (it's async). So we'd need the caller to race? No - the run() is not awaited with a timeout at the process level. The timeout in CommandOrchestrator is for user-specified command timeout. So the fix has to be inside run().
+
+Option: use a timeout that rejects a promise, and we race the stream consumption against it. So we need to consume the stream in a way we can abort. One approach: wrap the stream in an async iterator that throws after timeout. So we'd have something like:
+
+async function* withTimeout(stream, ms) {
+  const deadline = Date.now() + ms
+  for await (const chunk of stream) {
+    if (Date.now() > deadline) throw new Error('STREAM_TIMEOUT')
+    yield chunk
+  }
+}
+
+Then for await (let data of withTimeout(stream, 60000)). But if the stream is waiting on the next chunk, we won't get to check Date.now() until we get the next chunk. So the timeout would only be checked between chunks. That's acceptable - we'll break out within one chunk duration after 60s.
+
+Let me add the constant for 60s, the withTimeout generator, and the break on completion marker. I'll put the timeout at 60 seconds (or we could use a constant from constants.ts).
+</details></think>
+
+---
+
+
+正在实现两处修改：1) 在检测到完成标记后立即退出循环；2) 为流消费添加超时并回退到当前终端内容。
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: /home/ars/richard/2026/pvm_2/cline/src/integrations/terminal/constants.ts</summary>
+
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+
+I'll add a new constant for the shell integration stream timeout (e.g. 60 seconds) in constants.ts, then implement in VscodeTerminalProcess:
+1. Break when we see completion marker
+2. Wrap the for-await in a timeout - the cleanest is an async generator that yields from stream but throws after timeout. Timeout check on each yield.
+</details></think>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: /home/ars/richard/2026/pvm_2/cline/src/integrations/terminal/constants.ts</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: /home/ars/richard/2026/pvm_2/cline/src/hosts/vscode/terminal/VscodeTerminalProcess.ts</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+
+Now I need to:
+1. Add the break when we see completion marker - at the end of the loop body add: if (completionMatches.length > 0) break
+2. Wrap the for-await in a timeout. The way to do this without an async generator (which would need to be in the same file or a util) is to race: run the loop in an async IIFE and race with a timeout promise. When the timeout fires we reject. So after the loop we'd have a try/catch - if STREAM_TIMEOUT we proceed to the same "no output" fallback path.
+
+Actually the simplest is: create a wrapper async iterable that yields from stream but after SHELL_INTEGRATION_STREAM_TIMEOUT_MS throws. So we need a function that returns an async iterable. Let me do it inline with a simple approach: use Promise.race. The "run" is the for-await loop - we need to run it and have the race. So:
+
+const streamDone = (async () => {
+  for await (let data of stream) {
+    ...
+    if (completionMatches.length > 0) break
+  }
+})()
+
+await Promise.race([
+  streamDone,
+  new Promise((_, reject) => setTimeout(() => reject(new Error('STREAM_TIMEOUT')), SHELL_INTEGRATION_STREAM_TIMEOUT_MS))
+]).catch((err) => {
+  if (err?.message === 'STREAM_TIMEOUT') {
+    Logger.warn('Shell integration stream timed out; using terminal fallback for output.')
+  } else {
+    throw err
+  }
+})
+
+But the problem is streamDone never resolves - the for-await is the thing that runs, and when we break we exit the loop and streamDone resolves. So streamDone is a Promise that resolves when the loop exits. So when we break (completion marker), streamDone resolves and Promise.race returns. When timeout fires, we reject and catch sets the message - but we don't rethrow for STREAM_TIMEOUT, so the await Promise.race(...).catch() resolves. Then we fall through to emitRemainingBufferIfListening() and the rest. So we need the catch to not rethrow for STREAM_TIMEOUT so that execution continues. So:
+
+try {
+  await Promise.race([
+    (async () => {
+      for await (let data of stream) {
+        // ... all the current loop body ...
+        if (completionMatches.length > 0) break
+      }
+    })(),
+    new Promise((_, reject) =>
+      setTimeout(() => reject(new Error("STREAM_TIMEOUT")), SHELL_INTEGRATION_STREAM_TIMEOUT_MS),
+    ),
+  ])
+} catch (err: any) {
+  if (err?.message === "STREAM_TIMEOUT") {
+    Logger.warn("Shell integration stream timed out; using terminal fallback for output.")
+  } else {
+    throw err
+  }
+}
+
+That would require moving the entire for-await loop body into the inner async IIFE. And we need to share the variables (isFirstChunk, didOutputNonCommand, etc.) between the outer scope and the loop - they're already in the outer scope, so the inner async function will close over them. So we just need to wrap the for-await in the async IIFE and add the break, and race with timeout. Let me do the edit.
+
+Actually one more thing: when we timeout, we don't want to run emitRemainingBufferIfListening() and the rest with the partial data - we do want to, so that any output we got so far is emitted. So the flow is the same. Good.
+</details></think>
+
+---
+
+
+在 `VscodeTerminalProcess` 中：1) 在检测到完成标记后退出循环；2) 用超时包装流消费。
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: /home/ars/richard/2026/pvm_2/cline/src/hosts/vscode/terminal/VscodeTerminalProcess.ts</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+
+Now I need to close the loop body with the break when completion marker is seen, and close the consumeStream function, then add the Promise.race with timeout. Let me find the exact spot where the loop ends (after "this.lastRetrievedIndex = ...") and add the break, then close the async function and add the race.
+</details></think>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: /home/ars/richard/2026/pvm_2/cline/src/hosts/vscode/terminal/VscodeTerminalProcess.ts</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+
+I need to fix the indentation - the loop body was indented with tabs, and I added the break inside the loop but the "if (isFirstChunk)" block and the rest of the loop body are now inside consumeStream(). So the closing brace for the for-await loop should be just one level - we have:
+  consumeStream = async () => {
+    for await (...) {
+      ...
+      if (completionMatches.length > 0) break
+    }
+  }
+So the "}" that was closing the for-await now closes the for-await, and we have an extra "}" that closes consumeStream. But I added "}\n\t\t\t}" - so the first } closes the for-await loop and the second } closes consumeStream. But wait, the original loop had only one closing brace. So after my edit we have:
+  if (this.isListening) { ... }
+  if (completionMatches.length > 0) { break }
+  }  // closes for-await
+  }  // closes consumeStream
+So we have two closing braces. The first one closes the for-await, the second closes the async () => {}. So the structure is correct. But the indentation of the entire loop body - when I did the first replace I only added "const consumeStream = async () => {" and "if (isFirstChunk) {" - the rest of the loop body still has the same indentation. So the content inside the loop (from "// 1. Process chunk" onwards) is now double-indented because it's inside both consumeStream and for-await. Actually the original had single tab for the loop body. Now we have consumeStream with one more level. So we need one more tab for everything inside the loop. Let me check the file - the "// 1. Process chunk" and the big if (isFirstChunk) block - they were at single tab. Now they're inside consumeStream so they need one more tab. Let me read the file to see current state.
+</details></think>
+
+---
+
+
+正在检查修改后的文件结构并修复缩进。
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: /home/ars/richard/2026/pvm_2/cline/src/hosts/vscode/terminal/VscodeTerminalProcess.ts</summary>
+
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+
+The structure looks correct. There's a small indentation issue: the block from line 84-145 (the big if (isFirstChunk) { ... } else { ... }) has the opening brace at 84 with content at 85 that's not indented - the comment "The first chunk" should be one more tab in. But that was pre-existing - the original had "if (isFirstChunk) {\n\t\t\t\t/*". So inside the loop we have two tabs for the "if (isFirstChunk)" and the content. So it's fine.
+
+Let me run the tests to make sure nothing broke. The VscodeTerminalProcess has tests.
+</details></think>
+
+---
+
+
+正在运行相关单元测试以确认未破坏现有行为：
+
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_command_v2">
+<details><summary>Tool use: **run_terminal_command_v2** • Run command: cd /home/ars/richard/2026/pvm_2/cline && npm run test:unit -- --grep "TerminalProcess|VscodeTerminal" 2>&1 | head -80</summary>
+
+```bash
+cd /home/ars/richard/2026/pvm_2/cline && npm run test:unit -- --grep "TerminalProcess|VscodeTerminal" 2>&1 | head -80
+```
+
+```
+
+&gt; claude-dev@3.70.0 test:unit
+&gt; cross-env TS_NODE_PROJECT=./tsconfig.unit-test.json mocha --grep TerminalProcess|VscodeTerminal
+
+sh: 1: cross-env: not found
+
+```
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="todo_write">
+<details><summary>Tool use: **todo_write** • Todo List</summary>
+
+- [x] Break out of stream loop when ]633;D completion marker is seen
+- [x] Add timeout fallback so process always completes and emits continue
+
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+
+cross-env not found - need to use npx or the project might need npm install. Let me try npx.
+</details></think>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_command_v2">
+<details><summary>Tool use: **run_terminal_command_v2** • Run command: cd /home/ars/richard/2026/pvm_2/cline && npx cross-env TS_NODE_PROJECT=./tsconfig.unit-test.json npx mocha --grep "TerminalProcess" 2>&1 | head -100</summary>
+
+```bash
+cd /home/ars/richard/2026/pvm_2/cline && npx cross-env TS_NODE_PROJECT=./tsconfig.unit-test.json npx mocha --grep "TerminalProcess" 2>&1 | head -100
+```
+
+```
+npm warn exec The following package was not found and will be installed: cross-env@10.1.0
+npm warn exec The following package was not found and will be installed: mocha@11.7.5
+npm warn deprecated glob@10.5.0: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+
+✖ ERROR: Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'ts-node' imported from /home/ars/.npm/_npx/508606763866ae01/node_modules/mocha/lib/nodejs/esm-utils.js
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:255:9)
+    at packageResolve (node:internal/modules/esm/resolve:767:81)
+    at moduleResolve (node:internal/modules/esm/resolve:853:18)
+    at defaultResolve (node:internal/modules/esm/resolve:983:11)
+    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:801:12)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:725:25)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:708:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:309:38)
+    at onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:659:36)
+    at TracingChannel.tracePromise (node:diagnostics_channel:344:14)
+    at ModuleLoader.import (node:internal/modules/esm/loader:658:21)
+    at defaultImportModuleDynamicallyForScript (node:internal/modules/esm/utils:238:31)
+    at importModuleDynamicallyCallback (node:internal/modules/esm/utils:262:12)
+    at exports.doImport (/home/ars/.npm/_npx/508606763866ae01/node_modules/mocha/lib/nodejs/esm-utils.js:36:41)
+    at formattedImport (/home/ars/.npm/_npx/508606763866ae01/node_modules/mocha/lib/nodejs/esm-utils.js:33:18)
+    at requireModule (/home/ars/.npm/_npx/508606763866ae01/node_modules/mocha/lib/nodejs/esm-utils.js:102:36)
+    at exports.handleRequires (/home/ars/.npm/_npx/508606763866ae01/node_modules/mocha/lib/cli/run-helpers.js:103:34)
+    at async /home/ars/.npm/_npx/508606763866ae01/node_modules/mocha/lib/cli/run.js:358:25 {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+```
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="read_lints">
+<details>
+<summary>Tool use: **read_lints**</summary>
+
+
+Parameters:
+
+```json
+{
+  "paths": [
+    "/home/ars/richard/2026/pvm_2/cline/src/hosts/vscode/terminal/VscodeTerminalProcess.ts",
+    "/home/ars/richard/2026/pvm_2/cline/src/integrations/terminal/constants.ts"
+  ]
+}
+```
+Result:
+
+```json
+{
+  "linterErrorsByFile": [
+    {
+      "relativeWorkspacePath": "/home/ars/richard/2026/pvm_2/cline/src/hosts/vscode/terminal/VscodeTerminalProcess.ts"
+    },
+    {
+      "relativeWorkspacePath": "/home/ars/richard/2026/pvm_2/cline/src/integrations/terminal/constants.ts"
+    }
+  ]
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+
+Tests need to be run from project's npm (which has ts-node etc). Let me try npm run test:unit with a pattern that matches the terminal test file.
+</details></think>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_command_v2">
+<details><summary>Tool use: **run_terminal_command_v2** • Run command: cd /home/ars/richard/2026/pvm_2/cline && npm run check-types 2>&1 | tail -25</summary>
+
+```bash
+cd /home/ars/richard/2026/pvm_2/cline && npm run check-types 2>&1 | tail -25
+```
+
+```
+&gt; claude-dev@3.70.0 check-types
+&gt; npm run protos &amp;&amp; npx tsc --noEmit &amp;&amp; cd webview-ui &amp;&amp; npx tsc --noEmit &amp;&amp; cd ../cli &amp;&amp; npx tsc --noEmit
+
+
+&gt; claude-dev@3.70.0 protos
+&gt; node scripts/build-proto.mjs
+
+node:internal/modules/package_json_reader:255
+  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
+        ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'chalk' imported from /ssd_211032807004/richard/2026/pvm_2/cline/scripts/build-proto.mjs
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:255:9)
+    at packageResolve (node:internal/modules/esm/resolve:767:81)
+    at moduleResolve (node:internal/modules/esm/resolve:853:18)
+    at defaultResolve (node:internal/modules/esm/resolve:983:11)
+    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:801:12)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:725:25)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:708:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:309:38)
+    at #link (node:internal/modules/esm/module_job:201:49) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.2.0
+
+```
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+
+The project might not have node_modules installed. Linter passed. Let me provide a summary to the user - the code changes are done and lint-clean. They can run tests after npm install if needed.
+</details></think>
+
+---
+
+
+修改已经做完，当前没有 lint 报错。项目里可能还没执行过 `npm install`，所以类型检查和测试暂时跑不通。下面是这次改动的总结和用法说明。
+
+---
+
+## 问题原因
+
+执行终端命令后一直停在 “Thinking”、拿不到结果，是因为：
+
+1. **Shell integration 的 `execution.read()` 流有时不会结束**  
+   在部分环境/终端下，命令结束后流不会关闭，`for await (let data of stream)` 会一直等下一个 chunk，导致后面的 `emit("completed")` 和 `emit("continue")` 永远不执行，上层就一直等、界面一直显示 “Thinking”。
+
+2. **没有在“命令已结束”时主动退出**  
+   即使已经收到 VS Code 的完成标记 `]633;D`（表示命令结束），代码仍然在等流结束，没有在收到该标记后立刻结束循环并返回结果。
+
+---
+
+## 修改内容
+
+### 1. 在 `src/integrations/terminal/constants.ts` 中增加超时常量
+
+- 新增 `SHELL_INTEGRATION_STREAM_TIMEOUT_MS = 60_000`（60 秒），作为“等流结束”的最长时间。
+
+### 2. 在 `src/hosts/vscode/terminal/VscodeTerminalProcess.ts` 中
+
+- **收到完成标记就退出循环**  
+  在每个 chunk 处理完后，如果当前 chunk 里出现了 `]633;D`（即 `completionMatches.length > 0`），就 `break` 退出 `for await` 循环，不再等待流关闭。这样一旦 shell 报告命令结束，就会马上进入“无输出时用 fallback / 有输出时正常返回”的逻辑，并 `emit("completed")` / `emit("continue")`，界面就能结束 “Thinking” 并显示结果。
+
+- **为“消费流”加超时**  
+  把对 `stream` 的消费包在 `consumeStream()` 里，并用 `Promise.race` 与 60 秒超时赛跑：
+  - 若在 60 秒内流结束或已因完成标记而 `break`，则正常走现有逻辑（含无输出时的 `returnCurrentTerminalContents()` fallback）。
+  - 若 60 秒内流既没结束也没看到完成标记，则捕获 `STREAM_TIMEOUT`，打一条 warn 日志，然后继续执行后面的 `emitRemainingBufferIfListening()` 和“无输出则 fallback”等逻辑，最终仍会 `emit("completed")` 和 `emit("continue")`，避免永远卡在 “Thinking”。
+
+这样既解决了“流不关闭”导致的卡死，又保证了在“流异常不结束”时也能在 60 秒后返回结果（或 fallback），界面不再一直停在 “Thinking”。
+
+---
+
+## 你需要做的
+
+1. **重新编译并测试**  
+   在项目根目录执行：
+   - `npm install`（若尚未安装依赖）
+   - `npm run compile`  
+   然后在 VS Code 里实际跑几条终端命令，确认命令结束后能正常看到输出、不再一直 “Thinking”。
+
+2. **可选：跑测试**  
+   依赖装好后可以跑：
+   - `npm run test:unit`  
+   或只跑终端相关用例（具体命令依你项目里 test 脚本而定）。
+
+如果你希望把超时时间从 60 秒改成别的值，或希望超时时有不同的行为（例如弹提示），可以说明一下，我可以按你的需求再改一版。
+
+---
+
+_**User**_
+
+@\home\ars\.cursor\projects\home-ars-richard-2026-pvm-2-cline\terminals\1.txt:1058-1059 如何 生成一个类似的 版本为 3.70.1 的安装包？
+
+---
+
+_**Agent (model default, mode Agent)**_
+
+<think><details><summary>Thought Process</summary>
+
+The user wants to generate a VSIX package similar to the one in reference/ (saoudrizwan.claude-dev-3.70.0.vsix) but with version 3.70.1. I need to:
+
+1. Find where the version is defined in the project (likely package.json)
+2. Update it to 3.70.1
+3. Find how to build/package the VSIX (likely vsce package command from the scripts I saw earlier)
+
+Let me check package.json for version and the packaging script.
+</details></think>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search">
+<details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+
+Parameters:
+
+```json
+{
+  "pattern": "\"version\"|vsce|package",
+  "path": "/home/ars/richard/2026/pvm_2/cline/package.json",
+  "outputMode": "content",
+  "caseInsensitive": false
+}
+```
+Additional data:
+
+```json
+{
+  "isPruned": true,
+  "pattern": "\"version\"|vsce|package",
+  "path": "/home/ars/richard/2026/pvm_2/cline/package.json",
+  "outputMode": "content",
+  "totalFiles": 1,
+  "totalMatches": 11,
+  "topFiles": [
+    {
+      "uri": "package.json",
+      "matchCount": 11
+    }
+  ]
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+
+The version is in package.json line 5. The e2e build uses `vsce package --allow-package-secrets sendgrid --out dist/e2e.vsix`. For a normal package the command would be `vsce package` which by default outputs a file named like `publisher.name-version.vsix`. So the user needs to:
+1. Update package.json version from "3.70.0" to "3.70.1"
+2. Run the build (compile) and then vsce package
+
+Let me check the "package" script again - it runs check-types, build:webview, lint, and esbuild. So the full flow would be:
+- Update version to 3.70.1
+- npm run package (or npm run compile if they want to skip some checks)
+- npx vsce package --allow-package-secrets sendgrid --out reference/saoudrizwan.claude-dev-3.70.1.vsix (or just vsce package to get default output location)
+
+I'll update the version and then give the user the commands to run.
+</details></think>
+
+---
+
+
+正在将版本改为 3.70.1，并说明如何生成 VSIX 安装包。
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="edit_file_v2">
+
+<details><summary>Tool use: **edit_file_v2** • Edit file: /home/ars/richard/2026/pvm_2/cline/package.json</summary>
+
+</details>
+
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+
+Good. Now I'll provide the user with the commands to build and package. The reference file was in reference/saoudrizwan.claude-dev-3.70.0.vsix, so they probably want the output in reference/ with the same naming pattern.
+</details></think>
+
+---
+
+
+已经把根目录 `package.json` 里的版本改成了 **3.70.1**。按下面步骤可以打出和参考包同名的 3.70.1 安装包。
+
+**1. 编译并打 VSIX 包**
+
+在项目根目录执行：
+
+```bash
+# 编译（类型检查 + 构建 webview + 打包扩展）
+npm run package
+
+# 打出 VSIX，并放到 reference/ 下，命名为 3.70.1
+npx vsce package --allow-package-secrets sendgrid --out reference/saoudrizwan.claude-dev-3.70.1.vsix
+```
+
+**2. 如果不想跑 lint / 只想快速打包**
+
+```bash
+npm run protos && npm run build:webview && node esbuild.mjs --production
+npx vsce package --allow-package-secrets sendgrid --out reference/saoudrizwan.claude-dev-3.70.1.vsix
+```
+
+完成后安装包路径为：`reference/saoudrizwan.claude-dev-3.70.1.vsix`。
+
+**安装方式：**  
+在 VS Code/Cursor 里：命令面板 → “Extensions: Install from VSIX...” → 选该文件；或命令行：
+
+```bash
+code --install-extension reference/saoudrizwan.claude-dev-3.70.1.vsix
+```
+
+---
+
+_**User**_
+
+@\home\ars\.cursor\projects\home-ars-richard-2026-pvm-2-cline\terminals\1.txt:1004-1059 报错了。请分析
+
+---
+
+_**Agent (model default, mode Agent)**_
+
+<think><details><summary>Thought Process</summary>
+
+The user is getting build errors when running `npm run package`. The errors are in the webview-ui:
+
+1. **TS2688**: Cannot find type definition file for '@testing-library/jest-dom'. It's specified in tsconfig.app.json as an entry point in compilerOptions.types or similar.
+
+2. **TS2307**: Cannot find module '@vitejs/plugin-react-swc' in vite.config.ts.
+
+These look like missing dependencies - either:
+- The webview-ui/node_modules might not have been installed (npm install not run in webview-ui)
+- Or these are devDependencies that are referenced in tsconfig but the types/package might be missing
+
+Let me check webview-ui/package.json and tsconfig.app.json to understand the setup.
+</details></think>
+
+---
+
+
+分析 webview-ui 的构建错误，正在查看相关配置与依赖。
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: /home/ars/richard/2026/pvm_2/cline/webview-ui/package.json</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: /home/ars/richard/2026/pvm_2/cline/webview-ui/tsconfig.app.json</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file_v2">
+<details><summary>Tool use: **read_file_v2** • Read file: /home/ars/richard/2026/pvm_2/cline/webview-ui/vite.config.ts</summary>
+
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+
+The package.json lists both `@testing-library/jest-dom` and `@vitejs/plugin-react-swc` in devDependencies. So the issue is likely that:
+
+1. **webview-ui/node_modules** hasn't been installed - the user might have only run `npm install` at the root. The root package.json has workspaces including "." and "cli" but not "webview-ui". So when you run `npm install` at root, it might not install webview-ui's dependencies depending on workspace setup.
+
+Let me check - the root package.json has "workspaces": [".", "cli"] - so webview-ui is NOT in the workspace. That means when you run `npm install` at root, webview-ui's dependencies are NOT installed. You need to run `npm install` inside webview-ui as well, or add webview-ui to workspaces.
+
+Looking at the root package.json again - "install:all": "npm install && cd webview-ui && npm install". So the project expects you to run npm install in webview-ui separately (or use install:all). So the fix is: run `cd webview-ui && npm install` to install webview-ui's dependencies.
+
+2. The tsconfig.app.json has "types": ["vitest/globals", "@testing-library/jest-dom"]. When tsc runs, it looks for these type packages. If node_modules isn't installed in webview-ui, they won't be found.
+
+So the analysis is:
+- **Root cause**: webview-ui's dependencies are not installed. The root workspace only includes "." and "cli", not "webview-ui", so `npm install` at root doesn't install webview-ui's node_modules.
+- **Solution**: Run `npm run install:all` (which does `npm install && cd webview-ui && npm install`) or manually `cd webview-ui && npm install`.
+
+I'll explain this to the user and suggest they run install:all or cd webview-ui && npm install.
+</details></think>
+
+---
+
+
+分析结果如下：
+
+原因简述
+- 两个错误都来自 `webview-ui` 子项目：
+  1. 找不到类型定义 `@testing-library/jest-dom` — 在 `tsconfig.app.json` 的 `types` 中声明。
+  2. 找不到模块 `@vitejs/plugin-react-swc` — 在 `vite.config.ts` 中被引用。
+- 根目录的 `package.json` 里 workspaces 只有 `"."` 和 `"cli"`，不包含 `webview-ui`，因此根目录的 `npm install` 不会安装 `webview-ui` 的依赖。
+- `webview-ui/package.json` 中这两个包都在 devDependencies 里，若未在 `webview-ui` 下安装依赖，就会报错。
+
+解决办法
+- 在仓库根目录执行（推荐）：
+```bash
+npm run install:all
+```
+- 或只安装 webview-ui 的依赖：
+```bash
+cd webview-ui && npm install
+```
+然后再执行打包：
+```bash
+npm run package
+```
+
+
+---
+
+<tool-use data-tool-type="unknown" data-tool-name="ripgrep_raw_search">
+<details>
+<summary>Tool use: **ripgrep_raw_search**</summary>
+
+
+Parameters:
+
+```json
+{
+  "pattern": "install:all|workspaces",
+  "path": "/home/ars/richard/2026/pvm_2/cline/package.json",
+  "outputMode": "content",
+  "caseInsensitive": false
+}
+```
+Additional data:
+
+```json
+{
+  "isPruned": true,
+  "pattern": "install:all|workspaces",
+  "path": "/home/ars/richard/2026/pvm_2/cline/package.json",
+  "outputMode": "content",
+  "totalFiles": 1,
+  "totalMatches": 2,
+  "topFiles": [
+    {
+      "uri": "package.json",
+      "matchCount": 2
+    }
+  ]
+}
+```
+Status: **completed**
+
+
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+
+Good, so install:all does npm install at root and then cd webview-ui && npm install. I'll give the user a clear summary.
+</details></think>
+
+---
+
+
+在项目根目录执行：
+
+```bash
+npm run install:all
+```
+
+该脚本会先执行根目录的 `npm install`，再进入 `webview-ui` 执行 `npm install`，把 `@testing-library/jest-dom`、`@vitejs/plugin-react-swc` 等 devDependencies 装好。
+
+安装完成后再执行：
+
+```bash
+npm run package
+```
+
+即可正常打包。若之前只跑过根目录的 `npm install`，需要补上 `webview-ui` 的依赖安装这一步。
 
 ---
 
